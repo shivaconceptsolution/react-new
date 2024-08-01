@@ -1,37 +1,70 @@
 import { Link, Outlet } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+function MasterPage() {
+    return (
+    <>
+        <div className="container-fluid header">
+          
+                <div className="row">
+                    <div className="col-sm-4">
+                        <img src="azure.png" alt="azure logo" className="img-fluid" />
+                    </div>
+                    <div className="col-sm-8">
+                        <nav className="navbar navbar-expand-sm navbar-dark">
+                            <div className="container-fluid">
 
-function MasterPage()
-{
-    return(<div>
-            <header>
-                <div className="logo">
-                  <img src="azure.png" alt="azure logo"  width="200" height="100"/>
-                </div>
-                <div className="menu">
-                <ul>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-                <li>
-                    <Link to="/About">About us</Link>
-                </li>
-                <li>
-                    <Link to="/service">Services</Link>
-                </li>
-                <li>
-                    <Link to="/contact">Contact us</Link>
-                </li>
-             </ul>
-                </div>
-            
-            </header>
-            <section>
-            <Outlet />
-            </section>
-            <footer>
+                                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                                    <span className="navbar-toggler-icon"></span>
+                                </button>
+                                <div className="collapse navbar-collapse" id="collapsibleNavbar">
+                                    <ul className="navbar-nav">
+                                        <li className="nav-item">
+                                            <Link to="/">Home</Link>
+                                        </li>
+                                        <li className="nav-item">
+                                            <Link to="/About">About us</Link>
+                                        </li>
+                                      
+                                        <li className="nav-item">
+                                            <Link to="/service">Services</Link>
+                                        </li>
+                                        <li className="nav-item">
+                                            <Link to="/contact">Contact us</Link>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
 
-            </footer>
-            
-    </div>)
+                    </div>
+                </div>
+
+
+          
+        </div>
+        <section className="container-fluid">
+            <div className="row">
+                <div className="col-sm-12">
+                    <Outlet />
+                </div>
+            </div>
+
+        </section>
+        <footer className="container-fluid">
+            <div className="row">
+                <div className="col-sm-4">
+                    <p>footer part 1</p>
+                </div>
+                <div className="col-sm-4">
+                    <p>footer part 2</p>
+                </div>
+                <div className="col-sm-4">
+                    <p>footer part 3</p>
+                </div>
+            </div>
+        </footer>
+
+    </>)
 }
 export default MasterPage;
